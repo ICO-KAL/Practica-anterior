@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: practica-anterior-app
+    runtime: docker
+    plan: free
+    autoDeploy: false
