@@ -14,6 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate required secrets
+        run: |
+          [ -n "${{ secrets.DOCKER_USERNAME }}" ] || { echo "Missing DOCKER_USERNAME"; exit 1; }
+          [ -n "${{ secrets.DOCKER_PASSWORD }}" ] || { echo "Missing DOCKER_PASSWORD"; exit 1; }
+          [ -n "${{ secrets.RENDER_API_KEY }}" ] || { echo "Missing RENDER_API_KEY"; exit 1; }
+          [ -n "${{ secrets.RENDER_SERVICE_ID }}" ] || { echo "Missing RENDER_SERVICE_ID"; exit 1; }
+
       - name: Set tags
         run: |
           echo "IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/practica-anterior" >> $GITHUB_ENV

@@ -4,3 +4,7 @@ services:
     runtime: docker
     plan: free
     autoDeploy: false
+    healthCheckPath: /health
+    envVars:
+      - key: FALLBACK_MESSAGE
+        value: Aplicación desplegada correctamente en Render.

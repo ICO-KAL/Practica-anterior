@@ -38,4 +38,8 @@ La app usa estas variables de entorno opcionales:
 
 ## Deploy en Render
 
-Crea un Web Service tipo Docker en Render apuntando a este repositorio. Luego agrega el `RENDER_SERVICE_ID` y la `RENDER_API_KEY` en GitHub para que el despliegue se active automáticamente.
+Crea un Web Service tipo Docker en Render apuntando a este repositorio. Usa como nombre sugerido `practica-anterior-app` y Render generará una URL pública basada en ese nombre.
+
+Luego agrega el `RENDER_SERVICE_ID` y la `RENDER_API_KEY` en GitHub para que el despliegue se active automáticamente.
+
+Si GitHub Actions muestra el error de usuario o contraseña, significa que todavía faltan los secrets del repositorio.
